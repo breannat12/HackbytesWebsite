@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('detail-image').alt = selectedEntry.title;
     document.getElementById('detail-title').textContent = selectedEntry.title;
     document.getElementById('detail-type').textContent = selectedEntry.type;
+    document.getElementById('detail-quantity').textContent = selectedEntry.quantity;
     document.getElementById('detail-address').textContent = selectedEntry.address;
 
 });

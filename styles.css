@@ -3,17 +3,19 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Poppins', Arial, sans-serif; /* Added 'Poppins' font */
   }
   
   body {
-    font-family: 'Poppins', Arial, sans-serif; /* Added 'Poppins' font */
+    background-color:#c5e9d8;
     font-weight: 600; /* Semi-bold weight */
     padding: 20px;
+    padding-top: 100px;
   }
   
   h1, h2 {
     text-align: center;
-    margin-bottom: 20px;
+    /*margin-bottom: 20px;*/
   }
   
   #grid-container {
@@ -23,7 +25,6 @@
   }
   
   .grid-entry {
-    border: 1px solid #ccc;
     padding: 10px;
     text-align: center;
     transition: transform 0.3s ease;
@@ -38,6 +39,11 @@
     max-width: 100%;
     height: auto;
   }
+
+  #form-container {
+    margin-top: 20px;
+    padding-top: 100px;
+  }
   
   form {
     text-align: center;
@@ -49,27 +55,30 @@
     margin-bottom: 10px;
     font-weight: bold;
     color: #333;
+    padding-top: 30px;
   }
   
   form input[type="text"],
   form textarea {
-    width: 100%;
+    width: 80%;
     padding: 10px;
-    border: 1px solid #ccc;
     border-radius: 4px;
     transition: border-color 0.3s ease;
+    padding-top: 10px;
+    padding-bottom: 20px;
   }
   
   form input[type="text"]:focus,
   form textarea:focus {
-    border-color: #666;
+
   }
   
   form button[type="submit"] {
+    width: 10%;
     display: block;
     margin: 20px auto;
     padding: 10px 20px;
-    background-color: #6e8d9a;
+    background-color: #0b9b58;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -78,43 +87,73 @@
   }
   
   form button[type="submit"]:hover {
-    background-color: #8fb5be;
+    background-color: #38bd7f;
   }
   
   /* Additional Styles */
   .grid-entry {
     background-color: #f0f0f0;
+    font-weight: 400;
+    color:#252525;
   }
   
   .grid-entry h2 {
     margin-top: 10px;
     font-size: 20px;
-    color: #333;
+    color: #0b9b58;
   }
   
   form textarea {
     height: 100px;
   }
   
-  /* Add some pastel colors for the category buttons */
-  .category-buttons button {
-    margin-right: 5px;
-    padding: 8px 16px;
-    background-color: #b8d0d8;
-    color: #333;
-    border: none;
+  .navbar {
+    background-color: #0b9b58;
+    padding: 10px 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex; /* Added to create a flex container */
+    justify-content: center; /* Centers the flex items horizontally */
+  }
+  
+  
+  .logo {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 20px;
+  }
+  
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap; /* Add flex-wrap property */
+}
+  
+  .nav-links li {
+    margin-right: 10px;
+    
+  }
+  
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px;
     border-radius: 4px;
-    cursor: pointer;
     transition: background-color 0.3s ease;
   }
   
-  .category-buttons button:hover {
-    background-color: #dce8ec;
+  .nav-links a:hover {
+    background-color: #8fb5be;
   }
   
-  .selected-option {
-    margin-top: 10px;
-    font-weight: bold;
-    color: #666;
+  #typeText {
+    font-size: small;
+    padding-top: 0px;
+    font-weight: 400;
+    color:#b81212;
   }
-  

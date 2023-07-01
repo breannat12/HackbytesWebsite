@@ -20,8 +20,9 @@ function addNewGridEntry(entry) {
   newEntryElement.innerHTML = `
     <img src="${entry.image}" alt="${entry.title}">
     <h2>${entry.title}</h2>
-    <p>${entry.type}</p>
-    <p>${entry.address}</p>
+    <p>Type: ${entry.type}</p>
+    <p>Quantity: ${entry.quantity}</p>
+    <p>Address: ${entry.address}</p>
   `;
 
   // Add click event to the new grid entry
@@ -42,6 +43,7 @@ document.getElementById('entry-form').addEventListener('submit', function(event)
   var image = document.getElementById('image').value;
   var title = document.getElementById('title').value;
   var type = document.getElementById('type').value;
+  var quantity = document.getElementById('quantity').value;
   var address = document.getElementById('address').value;
 
   // Create a new grid entry object
@@ -49,6 +51,7 @@ document.getElementById('entry-form').addEventListener('submit', function(event)
     image: image,
     title: title,
     type: type,
+    quantity: quantity,
     address: address
   };
 
