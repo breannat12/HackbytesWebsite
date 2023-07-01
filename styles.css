@@ -11,11 +11,17 @@
     font-weight: 600; /* Semi-bold weight */
     padding: 20px;
     padding-top: 100px;
+    margin: 20px;
   }
   
   h1, h2 {
     text-align: center;
     /*margin-bottom: 20px;*/
+  }
+
+  h1 {
+    margin-top:10%;
+    text-align: center;
   }
   
   #grid-container {
@@ -317,4 +323,35 @@ footer {
   opacity: 1;
   transform: translateY(0);
   }
+
+  /*LEADERBOARD*/
+  table {
+    margin-top: 0%;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+  }
+ 
+  th, td {
+    padding: 20px;
+    text-align: center;
+  }
+ 
+  th {
+    background-color: #f2f2f2;
+}
+ 
+  tr:nth-child(even) {
+    background-color: #f9f9f9;  
+  }
+ 
+  tr:first-child {
+    font-weight:bolder;
+  }
+
+.submit-btn{
+  background-color: #0b9b58;
+  color:white;
+}
   
