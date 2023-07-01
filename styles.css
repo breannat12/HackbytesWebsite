@@ -166,7 +166,7 @@
   .filter-button {
     margin: 5px;
     padding: 5px 10px;
-    background-color: #0b9b58;
+    background-color: #42ca8a;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -175,5 +175,11 @@
   }
   
   .filter-button:hover {
-    background-color: #38bd7f;
+    background-color: #58da9d;
   }
+
+  .filter-button:active {
+    background-color: #0b9b58;
+    color: #ffffff;
+  }
+  
