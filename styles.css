@@ -227,6 +227,8 @@
     margin-left: 15px;
     padding: 20px;
     height: auto;
+    z-index: -1; /* Updated z-index value */
+    position: relative;
   }
 
   #backBorder h3 {
@@ -284,8 +286,17 @@
 
 .logoBig img {
   margin-top: 140px;
-  display: block;
 }
+
+.aboutText {
+  padding: 10px;
+}
+
+.aboutText p {
+  padding-bottom: 30px;
+  font-weight: 400;
+}
+
 
 /*EXTRA*/
 footer {
@@ -325,14 +336,19 @@ footer {
   transform: translateY(0);
   }
 
+  #homeText {
+    z-index: 900;
+  }
+
   /*LEADERBOARD*/
   table {
     margin-top: 0%;
     border-collapse: collapse;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: #f1fbf7;
     text-align: center;
   }
+
  
   th, td {
     padding: 20px;
@@ -340,11 +356,11 @@ footer {
   }
  
   th {
-    background-color: #f2f2f2;
+    background-color: #c9e1d5;
 }
  
   tr:nth-child(even) {
-    background-color: #f9f9f9;  
+    background-color: #e1f8ed;  
   }
  
   tr:first-child {

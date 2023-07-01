@@ -7,83 +7,64 @@ window.addEventListener('DOMContentLoaded', () => {
     const itemSelect = document.getElementById('selectItem');
   
   
+  
+  
+     //-------------CLEAR ALL DATA---------------
+      /*const clearLeaderboardData = () => {
+        localStorage.removeItem('leaderboardData');
+        leaderboardData = []; // Clear the leaderboard data in memory
+        updateLeaderboard(); // Update the leaderboard display
+      };
+   
+   
+      clearLeaderboardData();*/
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
     // Get the leaderboard data from localStorage or use a default value
-    let leaderboardData = JSON.parse(localStorage.getItem('leaderboardData')) || [
-      /*{ name: 'Bojack', score: 50, water: 35, cotton: 40 },
-      { name: 'Freddy', score: 100, water: 5, cotton: 80 },
-      { name: 'Guts', score: 50, water: 10, cotton: 30 },
-      { name: 'Eren', score: 0, water: 0, cotton: 0 },
-      { name: 'Train', score: 0, water: 0, cotton: 0 }*/
-    ];
+    let leaderboardData = JSON.parse(localStorage.getItem('leaderboardData')) || [];
   
   
   
   
-   //-------------CLEAR ALL DATA---------------
-    /*const clearLeaderboardData = () => {
-      localStorage.removeItem('leaderboardData');
-      leaderboardData = []; // Clear the leaderboard data in memory
-      updateLeaderboard(); // Update the leaderboard display
+    // Function to update the leaderboard
+    const updateLeaderboard = () => {
+      // Sort the leaderboard data based on score in descending order
+      leaderboardData.sort((a, b) => b.score - a.score);
+  
+  
+      // Get the first row (header row) of the leaderboard table
+      const headerRow = leaderboard.querySelector('tr:first-child');
+  
+  
+      // Clear all rows except the header row
+      while (leaderboard.rows.length > 1) {
+        leaderboard.deleteRow(1);
+      }
+  
+  
+      // Rebuild the leaderboard starting from the second row
+      leaderboardData.forEach((entry, index) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `<td>${index + 1}</td><td>${entry.name}</td><td>${entry.score}</td><td>${entry.water}</td><td>${entry.cotton}</td>`;
+        leaderboard.appendChild(row);
+      });
+  
+  
+      // Reinsert the header row
+      leaderboard.insertBefore(headerRow, leaderboard.firstChild);
+  
+  
+      // Save the updated leaderboard data to localStorage
+      localStorage.setItem('leaderboardData', JSON.stringify(leaderboardData));
     };
-  
-  
-    clearLeaderboardData();*/
-  
-  
-  
-  
-  
-  
-    // Set amount of points to move position
-    const POINTS_TO_MOVE = 50;
-  
-  
-    // Function to update the leaderboard
-    // Function to update the leaderboard
-  const updateLeaderboard = () => {
-    // Sort the leaderboard data based on score in descending order
-    leaderboardData.sort((a, b) => b.score - a.score);
-  
-  
-    // Get the first row (header row) of the leaderboard table
-    const headerRow = leaderboard.querySelector('tr:first-child');
-  
-  
-    // Clear all rows except the header row
-    while (leaderboard.rows.length > 1) {
-      leaderboard.deleteRow(1);
-    }
-  
-  
-    // Rebuild the leaderboard starting from the second row
-    leaderboardData.forEach((entry, index) => {
-      const row = document.createElement('tr');
-      row.innerHTML = `<td>${index + 1}</td><td>${entry.name}</td><td>${entry.score}</td><td>${entry.water}</td><td>${entry.cotton}</td>`;
-      leaderboard.appendChild(row);
-    });
-  
-  
-    // Reinsert the header row
-    leaderboard.insertBefore(headerRow, leaderboard.firstChild);
-  
-  
-    // Save the updated leaderboard data to localStorage
-    localStorage.setItem('leaderboardData', JSON.stringify(leaderboardData));
-  };
-  
-  
-  
-  
-   
-  
-  
-   
-    //add random points to a user
-   /* const addRandomPoints = () => {
-      const randomIndex = Math.floor(Math.random() * leaderboardData.length);
-      leaderboardData[randomIndex].score += POINTS_TO_MOVE;
-      updateLeaderboard();
-    };*/
   
   
     // Function to add a new user
@@ -92,7 +73,7 @@ window.addEventListener('DOMContentLoaded', () => {
       const name = nameInput.value.trim();
       const selectedItem = itemSelect.value;
       const score = itemsInput.value.trim() * selectedItem;
-      let water, cotton; // Declare the variables here
+      let water, cotton;
   
   
       if (name !== '') {
@@ -131,7 +112,6 @@ window.addEventListener('DOMContentLoaded', () => {
   
   
         if (!existingUser) {
-          // Use the same variable names declared above
           if (selectedItem == 20) {
             water = itemsInput.value.trim() * 590;
             cotton = itemsInput.value.trim() * 0.55;
@@ -165,10 +145,7 @@ window.addEventListener('DOMContentLoaded', () => {
     addUserForm.addEventListener('submit', addUser);
   
   
-    // Add event listener to the "Add Random Points" button
-    addPointsBtn.addEventListener('click', addRandomPoints);
-  
-  
     // Initial population of the leaderboard
     updateLeaderboard();
   });
+    

@@ -135,6 +135,6 @@ var claimButton = document.getElementById('claim-button');
   }
 
       // Clear entries from local storage when the user closes the website
-      //window.addEventListener('beforeunload', function() {
-      //localStorage.removeItem('entries');
-      //});
+      window.addEventListener('beforeunload', function() {
+      localStorage.removeItem('entries');
+      });
