@@ -279,3 +279,42 @@
   margin-top: 140px;
   display: block;
 }
+
+/*EXTRA*/
+footer {
+  background-color: #ffffff00;
+  color: #000000;
+  padding: 20px;
+  text-align: center;
+  font-size: 13px;
+  }
+  
+  
+  input[type="password"] {
+  /* Add your CSS styles here */
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+  }
+  
+  
+  input[type="email"] {
+  /* Add your CSS styles here */
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+  }
+  
+  
+  #backBorder > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s, transform 0.5s;
+  }
+  
+  
+  #backBorder > *.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  }
+  
