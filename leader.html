@@ -3,8 +3,8 @@
 <head>
   <title>Dynamic Leaderboard</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
-   
- 
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
  
 </head>
 <body>
@@ -42,10 +42,14 @@
 
 
   <form id="add-user-form">
-    <input type="text" id="name-input" placeholder="Enter your name">
-    <input type="number" id="items-input" placeholder="Enter amount of items">
+    <h3>Type Your Name:</h3>
+    <input type="text" id="name-input" class="input-name-text"placeholder="Enter your name">
+    <br>
+    <br>
+    <h3>How Many Items You Donated:</h3>
+    <input type="number" id="items-input" class= "item-amount-text"placeholder="Enter amount of items">
     <label for="select-item">Select type of item:</label>
-  <select id="selectItem">
+  <select id="selectItem" class="selectItem">
     <option> </option>
     <option value=20>Shirt</option>
     <option value=30>Pants</option>
@@ -56,18 +60,10 @@
   <button type="submit" class="submit-btn">Update  User</button>
   </form>
 
-
-
-
-
-
 <!--   <button id="add-points-btn">test random points</button> -->
 
 
   <!--   <button onclick="saveData()">asdf</button> -->
-
-
-
 
   <script src="test.js"></script>
 </body>
