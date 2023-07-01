@@ -48,6 +48,10 @@ function addNewGridEntry(entry, index) {
 
   var gridContainer = document.getElementById('grid-container');
   gridContainer.appendChild(newEntryElement);
+
+  if (entry.claimed) {
+    newEntryElement.classList.add('claimed');
+  }
 }
 
 function viewEntry(index) {
@@ -113,3 +117,19 @@ for (var i = 0; i < filterButtons.length; i++) {
     filterEntries(type);
   });
 }
+
+var claimButton = document.getElementById('claim-button');
+  claimButton.addEventListener('click', function() {
+    markAsClaimed(entryIndex);
+  });
+
+  function markAsClaimed(index) {
+    entries[index].claimed = true;
+    saveEntriesToLocalStorage();
+
+    // Add the 'claimed' class to the entry element
+    var entryElement = document.querySelector('.grid-entry[data-entry-index="' + index + '"]');
+    entryElement.classList.add('claimed');
+
+    window.location.href = 'index.html';
+  }
