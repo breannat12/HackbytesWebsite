@@ -68,7 +68,8 @@ document.getElementById('entry-form').addEventListener('submit', function(event)
     title: title,
     type: type,
     quantity: quantity,
-    address: address
+    address: address,
+    claimed: false // Add claimed property with initial value false
   };
 
   entries.push(newEntry);

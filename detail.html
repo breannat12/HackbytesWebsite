@@ -26,6 +26,9 @@
     <p id="detail-type"></p>
     <p id="detail-quantity"></p>
     <p id="detail-address"></p>
+    <div id="claim-button-container">
+      <button id="claim-button">Claim!</button>
+    </div>
   </div>
 
   <script src="script.js"></script>
@@ -47,6 +50,17 @@
     } else {
       // Handle invalid entry index or entry not found
       document.getElementById('entry-details').innerHTML = '<h2>Entry not found</h2>';
+    }
+
+    var claimButton = document.getElementById('claim-button');
+    claimButton.addEventListener('click', function() {
+      markAsClaimed(entryIndex);
+    });
+
+    function markAsClaimed(index) {
+      entries[index].claimed = true;
+      saveEntriesToLocalStorage();
+      window.location.href = 'index.html';
     }
   </script>
 </body>
