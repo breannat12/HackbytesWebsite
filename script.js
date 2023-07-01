@@ -133,3 +133,8 @@ var claimButton = document.getElementById('claim-button');
 
     window.location.href = 'index.html';
   }
+
+      // Clear entries from local storage when the user closes the website
+      //window.addEventListener('beforeunload', function() {
+      //localStorage.removeItem('entries');
+      //});
