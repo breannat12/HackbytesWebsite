@@ -13,24 +13,45 @@ function saveEntriesToLocalStorage() {
 }
 
 // Add a new grid entry
-function addNewGridEntry(entry) {
+function addNewGridEntry(entry, index) {
   var newEntryElement = document.createElement('div');
   newEntryElement.className = 'grid-entry';
-  newEntryElement.innerHTML = `
-    <img src="${entry.image}" alt="${entry.title}">
-    <h2>${entry.title}</h2>
-    <p>Type: ${entry.type}</p>
-    <p>Quantity: ${entry.quantity}</p>
-    <p>Address: ${entry.address}</p>
-  `;
+  newEntryElement.setAttribute('data-entry-index', index);
 
-  var entryIndex = entries.length - 1;
+  var imageElement = document.createElement('img');
+  imageElement.className = 'entry-image';
+  imageElement.src = entry.image;
+  imageElement.alt = entry.title;
+
+  var titleElement = document.createElement('h2');
+  titleElement.textContent = entry.title;
+
+  var typeElement = document.createElement('p');
+  typeElement.textContent = 'Type: ' + entry.type;
+
+  var quantityElement = document.createElement('p');
+  quantityElement.textContent = 'Quantity: ' + entry.quantity;
+
+  var addressElement = document.createElement('p');
+  addressElement.textContent = 'Address: ' + entry.address;
+
+  newEntryElement.appendChild(imageElement);
+  newEntryElement.appendChild(titleElement);
+  newEntryElement.appendChild(typeElement);
+  newEntryElement.appendChild(quantityElement);
+  newEntryElement.appendChild(addressElement);
+
   newEntryElement.addEventListener('click', function() {
+    var entryIndex = this.getAttribute('data-entry-index');
     viewEntry(entryIndex);
   });
 
   var gridContainer = document.getElementById('grid-container');
   gridContainer.appendChild(newEntryElement);
+}
+
+function viewEntry(index) {
+  window.location.href = `detail.html?entry=${index}`;
 }
 
 document.getElementById('entry-form').addEventListener('submit', function(event) {
@@ -52,7 +73,7 @@ document.getElementById('entry-form').addEventListener('submit', function(event)
 
   entries.push(newEntry);
   saveEntriesToLocalStorage();
-  addNewGridEntry(newEntry);
+  addNewGridEntry(newEntry, entries.length - 1);
   document.getElementById('entry-form').reset();
 });
 
@@ -65,8 +86,8 @@ function filterEntries(type) {
   var gridContainer = document.getElementById('grid-container');
   gridContainer.innerHTML = ''; // Clear existing grid entries
 
-  filteredEntries.forEach(function(entry) {
-    addNewGridEntry(entry);
+  filteredEntries.forEach(function(entry, index) {
+    addNewGridEntry(entry, index);
   });
 }
 
@@ -79,8 +100,8 @@ document.getElementById('filter-buttons').addEventListener('click', function(eve
 
 // Load entries from local storage on page load
 loadEntriesFromLocalStorage();
-entries.forEach(function(entry) {
-  addNewGridEntry(entry);
+entries.forEach(function(entry, index) {
+  addNewGridEntry(entry, index);
 });
 
 // Add event listeners to the filter buttons

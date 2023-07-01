@@ -227,3 +227,22 @@
     padding-left: 30px;
     font-weight: 400;
   }
+
+  .entry-image {
+  width: 100%; /* Adjust the desired width value */
+  height: auto; /* Maintain aspect ratio */
+}
+
+#entry-details {
+  margin-top: 60px;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+#entry-details img {
+  width: 25%;
+  height: auto;
+  border: 8px solid #ffffff; /* Add border style */
+  border-radius: 0px; /* Optional: Add border radius for rounded corners */
+}
