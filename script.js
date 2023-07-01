@@ -90,4 +90,4 @@ for (var i = 0; i < filterButtons.length; i++) {
     var type = this.dataset.type;
     filterEntries(type);
   });
-}
+} 
