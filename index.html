@@ -8,43 +8,44 @@
 
 </head>
 <body>
+    <div class="header">
+        <h1 class="logo">EcoThreads</h1>
+    </div>
     
     <nav class="navbar">
-      <div>
-        <h1 class="logo">EcoThreads</h1>
-      </div>
         <ul class="nav-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
         </ul>
     </nav>
 
     <div id="filter-buttons">
-      <button class="filter-button" data-type="all">All</button>
-      <button class="filter-button" data-type="shirt">Shirts</button>
-      <button class="filter-button" data-type="pant">Pants</button>
-      <button class="filter-button" data-type="jacket">Jackets</button>
-      <button class="filter-button" data-type="accessory">Accessories</button>
+        <button class="filter-button" data-type="all">All</button>
+        <button class="filter-button" data-type="shirt">Shirts</button>
+        <button class="filter-button" data-type="pant">Pants</button>
+        <button class="filter-button" data-type="jacket">Jackets</button>
+        <button class="filter-button" data-type="denim">Denim</button>
+        <button class="filter-button" data-type="accessory">Accessories</button>
     </div>
- 
+
     <div id="grid-container"></div>
 
     <div id="form-container">
-      <h2>Add a New Entry</h2> 
-      <form id="entry-form">
-        <label for="image">Image URL:</label>
-        <input type="text" id="image" required>
-        <label for="title">Title:</label>
-        <input type="text" id="title" required>
-        <label for="type">Type of Clothing:</label>
-        <input type="text" id="type" required></textarea>
-        <label for="quantity">Quantity:</label>
-        <input type="text" id="quantity" required>
-        <label for="address">Address:</label>
-        <input type="text" id="address" required></textarea>
-        <button type="submit">Submit</button>
-      </form>
+        <h2>Add a New Entry</h2>
+        <form id="entry-form">
+            <label for="image">Image URL:</label>
+            <input type="text" id="image" required>
+            <label for="title">Title:</label>
+            <input type="text" id="title" required>
+            <label for="type">Type of Clothing:</label>
+            <input type="text" id="type" required></textarea>
+            <label for="quantity">Quantity:</label>
+            <input type="text" id="quantity" required>
+            <label for="address">Address:</label>
+            <input type="text" id="address" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
     </div>
 
     <script src="script.js"></script>
